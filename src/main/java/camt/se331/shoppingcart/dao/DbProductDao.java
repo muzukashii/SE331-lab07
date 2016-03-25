@@ -13,47 +13,48 @@ import java.util.List;
 @Repository
 public class DbProductDao implements ProductDao {
     @Autowired
-        ProductRepository productRepository;
-    @Override
-        public List<Product> getProducts() {
-                return productRepository.findAll();
-            }
+    ProductRepository productRepository;
 
     @Override
-        public List<Product> getProductByName(String name) {
-                return null;
-            }
+    public List<Product> getProducts() {
+        return productRepository.findAll();
+    }
 
     @Override
-        public List<Product> getProductByDescription(String description) {
-                return null;
-            }
+    public List<Product> getProductByName(String name) {
+
+        return productRepository.findByNameOrDescriptionContainingIgnoreCase(name,name) ;
+    }
 
     @Override
-        public Product getProduct(Long id) {
-                return productRepository.findOne(id);
-            }
+    public List<Product> getProductByDescription(String description) {
+        return null;
+    }
 
     @Override
-        public Product addProduct(Product product) {
-                return productRepository.save(product);
-           }
+    public Product getProduct(Long id) {
+        return productRepository.findOne(id);
+    }
 
     @Override
-        public Product deleteProduct(Product product) {
-               productRepository.delete(product);
-                    product.setId(null);
-                return product;
-            }
+    public Product addProduct(Product product) {
+        return productRepository.save(product);
+    }
 
     @Override
-       public Product updateProduct(Product product) {
-              return productRepository.save(product);
-           }
+    public Product deleteProduct(Product product) {
+        productRepository.delete(product);
+        product.setId(null);
+        return product;
+    }
+
+    @Override
+    public Product updateProduct(Product product) {
+        return productRepository.save(product);
+    }
 
     public List<Product> getProductsByName(String name) {
-                return productRepository.findByNameLike(name);
-            }
-
+        return productRepository.findByNameContaining(name);
+    }
 }
 
