@@ -41,9 +41,9 @@ public class DatabaseInitializationBean implements InitializingBean {
             ShoppingCart shoppingCart = new ShoppingCart();
             List<SelectedProduct> selectedProducts = new ArrayList<>();
             SelectedProduct[] initSelectedProduct = {
-                    new SelectedProduct(initProduct[2], 5),
-                    new SelectedProduct(initProduct[4], 2),
-                    new SelectedProduct(initProduct[1], 1),
+                    new SelectedProduct(initProduct[7], 4),
+                    new SelectedProduct(initProduct[8], 6),
+                    new SelectedProduct(initProduct[9], 3),
             };
             selectedProducts.addAll(Arrays.asList(initSelectedProduct));
             Calendar calendar = new GregorianCalendar(2015,4,7);
