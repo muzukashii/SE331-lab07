@@ -12,7 +12,6 @@ productService.factory('productService',function($resource){
 productService.service('totalCalService',function() {
     this.getTotalNetPrice = function (products) {
         var output = 0.0;
-
         for (var index = 0; index < products.length;index++) {
             var product = products[index];
             output += parseFloat(product.netPrice);

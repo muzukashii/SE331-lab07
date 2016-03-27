@@ -6,7 +6,9 @@ var labApp = angular.module('labApp', [
     'productMainController',
     'languageControllers',
     'languageServices',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'shoppingCartControllers',
+    'shoppingCartServices'
 ])
 labApp.config(['$routeProvider',
   function($routeProvider) {
@@ -23,7 +25,11 @@ labApp.config(['$routeProvider',
           templateUrl: 'template/productList.html',
           controller: 'listProductController'
       }).
-       otherwise({redirectTo: '/listProduct'});
+      when('/shoppingCart/:id',{
+            templateUrl: 'template/shoppingCart.html',
+            controller: 'showShoppingCartController'
+      }).
+      otherwise({redirectTo: '/listProduct'});
 }]);
 
 labApp.config(function($translateProvider){
