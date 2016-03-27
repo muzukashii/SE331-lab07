@@ -41,7 +41,7 @@ public class DatabaseInitializationBean implements InitializingBean {
             ShoppingCart shoppingCart = new ShoppingCart();
             List<SelectedProduct> selectedProducts = new ArrayList<>();
             SelectedProduct[] initSelectedProduct = {
-                    new SelectedProduct(initProduct[2], 4),
+                    new SelectedProduct(initProduct[2], 5),
                     new SelectedProduct(initProduct[4], 2),
                     new SelectedProduct(initProduct[1], 1),
             };
