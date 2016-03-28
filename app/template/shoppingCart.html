@@ -1,7 +1,7 @@
 <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading">ShoppingCart</div>
-        <div class="panel-body">
+        <div class="panel-heading text-center">ShoppingCart</div>
+        <div class="panel-body text-center">
             ShoppingCart Details
         </div>
 
@@ -31,11 +31,11 @@
                         <th></th>
                         <th></th>
                         <th></th>
-                        <th class="text-right">{{total() | number :2}}</th>
+                        <th class="text-right">{{total()|number :2}}</th>
                     </tr>
                 </table>
                 <div class="panel-body text-center">
-                    <a href ng:click="updateCart()" class="btn btn-primary ">update cart</a>
+                    <a href ng-click="updateCart()" class="btn btn-primary ">update cart</a>
                 </div>
             </div>
         </form>

@@ -5,6 +5,7 @@
     shoppingCartControllers.controller('showShoppingCartController',
                 ['$scope', 'shoppingCartService', '$location', '$rootScope','$routeParams',
                 function ($scope, shoppingCartService, $location, $rootScope,$rootParams) {
+                        $scope.cart=[];
                         var id = $rootParams.id;
                         shoppingCartService.get({id:id},function(data){
                                 $scope.cart = data;
